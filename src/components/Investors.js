@@ -6,12 +6,13 @@ import Table from "./Table";
 // Example of a component that uses apollo-client to fetch data.
 
 const Investors = props => {
-  const [limit, setLimit] = useState(6);
+  const [limit, setLimit] = useState(5);
   const GET_INVESTORS = gql`
 query GetInvestors {
     investor(limit: ${limit}) {
         id
         name
+        photo_thumbnail
     }
 }
 `;
@@ -34,10 +35,9 @@ query GetInvestors {
         <div className="search">Search</div>
       </div>
       <Table data={data.investor} type="Investor" />
-      <div style={{ color: "black" }}>
-        <div></div>
+      <div className="bottom-pager">
         <div>
-          Rows Per Page :{" "}
+          <label htmlFor="limit">Rows per page</label>
           <select
             style={{ border: "0" }}
             onChange={evt => setLimit(evt.target.value)}
@@ -45,16 +45,17 @@ query GetInvestors {
             <option value={limit} hidden>
               {limit}
             </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
             <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
             <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+            <option value="60">60</option>
+            <option value="70">70</option>
+            <option value="80">80</option>
+            <option value="90">90</option>
+            <option value="100">100</option>
           </select>{" "}
         </div>
         <p>1-{limit} of 100 </p>
