@@ -205,8 +205,176 @@
   padding-right: 9px;
 }
 
+.link-tags {
+  text-decoration: none;
+}
 
 
+/*details page*/
+
+.details-body {
+  padding-top: 48px;
+}
+
+.db-part-one,
+.dbpo-two div {
+  display: flex;
+}
+
+.dbpo-two div {
+  cursor: pointer;
+}
+
+
+.dbpo-two div:nth-child(1) {
+  margin-right: 20px;
+}
+
+.db-part-one {
+  margin-bottom: 38px;
+}
+
+.dbpo-one p {
+  font-weight: 500;
+  font-size: 24px;
+  color: #000000;
+  margin: 0px;
+
+}
+
+.dbpo-one,
+.dbpo-two {
+  flex: 1;
+  display: flex;
+}
+
+.dbpo-two {
+  justify-content: flex-end;
+}
+
+
+
+.dbpo-two p {
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #000000;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 7px;
+  padding-top: 2px;
+}
+
+
+.editName {
+  margin-right: 20px;
+}
+
+.go-back {
+  font-size: 23px;
+  color: #000;
+  padding-top: 15px;
+}
+
+.dbpo-one .tai {
+  font-weight: 500;
+  font-size: 15px;
+  color: #000000;
+}
+
+.avatar-parent {
+  display: flex;
+}
+
+.avatar-parent img {
+  height: 60px;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+.db-part-two {
+  padding-left: 114px;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.db-part-two p {
+  font-weight: 500;
+  font-size: 15px;
+  color: #000000;
+  margin-right: 12px;
+}
+
+
+.db-part-two p:nth-child(2) {
+
+  color: #333FAD;
+  cursor: pointer;
+}
+
+.table-container {
+  padding-left: 114px;
+  height: 40vh;
+  overflow: auto;
+}
+
+.table-container table {
+  width: 100%;
+}
+
+table thead tr th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #797979;
+  padding-bottom: 7px;
+  position: sticky;
+  top: 0;
+  background: white;
+}
+
+table thead tr th:nth-child(2),
+table tbody tr td:nth-child(2) {
+  text-align: center;
+}
+
+
+table thead tr th:nth-child(3),
+table tbody tr td:nth-child(3) {
+  text-align: end;
+  padding-right: 1rem;
+}
+
+.action-pencil,
+.action-trash {
+  font-size: 15px;
+  margin-right: 29px;
+  cursor: pointer;
+}
+
+.action-trash {
+  margin-right: 0px;
+}
+
+
+
+table tbody tr td {
+  font-weight: 500;
+  font-size: 14px;
+  color: #000000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #EEEEEE;
+}
+
+table tbody tr td:nth-child(2) {
+  font-size: 12px;
+}
 
 
 @media (prefers-reduced-motion: no-preference) {

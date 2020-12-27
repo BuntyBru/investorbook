@@ -12,16 +12,15 @@ const GET_COMPANIES_FROM_ID = gql`
     }
   }
 `;
-function InvestorData(props) {
-  console.log("Investor ID", props.id);
+const InvestorData = props => {
   const companyNames = useQuery(GET_COMPANIES_FROM_ID, {
     variables: { investor_id: props.id }
   });
-  console.log("companyNames", companyNames);
   if (companyNames.loading) return <p>Loading...</p>;
   if (companyNames.error) return <p>Error :( {companyNames.error.message}</p>;
   if (companyNames.data.investment.length === 0)
     return <p>The database is empty!</p>;
+
   return (
     <>
       {companyNames.data.investment.map(({ company_id, company }) => (
@@ -29,6 +28,6 @@ function InvestorData(props) {
       ))}
     </>
   );
-}
+};
 
 export default InvestorData;
