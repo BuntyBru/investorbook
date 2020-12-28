@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Table from "./Table";
 import { useQuery, gql } from "@apollo/client";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Company = props => {
   const [limit, setLimit] = useState(5);
@@ -28,7 +30,9 @@ query GetCompanies {
           <button>Add Companies</button>
         </div>
 
-        <div className="search">Search</div>
+        <div className="search">
+          <FontAwesomeIcon icon={faSearch} />
+        </div>
       </div>
       <Table data={data.company} type="Company" />
       <div className="bottom-pager">

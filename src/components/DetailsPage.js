@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
 import {
   faAngleLeft,
@@ -8,6 +8,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "@reach/router";
 import NumberFormat from "react-number-format";
+import Modal from "./Modal";
+import InsideModalInvestor from "./InsideModalInvestor";
 
 const DetailsPage = props => {
   const GET_INVESTOR_DETAILS = gql`
@@ -28,6 +30,8 @@ const DetailsPage = props => {
     }
   `;
 
+  let [showModal, setshowModal] = useState(false);
+
   const investorId = props.id;
   const details = useQuery(GET_INVESTOR_DETAILS, {
     variables: { investor_id: investorId }
@@ -47,7 +51,7 @@ const DetailsPage = props => {
     });
     return (
       <p className="tai">
-        Total Amount Invested:{" "}
+        Total Amount Invested:
         <span>
           <NumberFormat
             value={totalAmount}
@@ -59,6 +63,8 @@ const DetailsPage = props => {
       </p>
     );
   };
+
+  const toggleModal = () => setshowModal(!showModal);
 
   return (
     <div className="details-body">
@@ -90,7 +96,15 @@ const DetailsPage = props => {
 
       <div className="db-part-two">
         <p>Investments</p>
-        <p>+Add Investments</p>
+        <button onClick={toggleModal}>+Add Investments</button>
+        {showModal ? (
+          <Modal>
+            <InsideModalInvestor
+              toggleModal={toggleModal}
+              data={details.data}
+            />
+          </Modal>
+        ) : null}
       </div>
 
       <div className="table-container">
@@ -104,7 +118,7 @@ const DetailsPage = props => {
           </thead>
           <tbody>
             {details.data.investment.map(({ amount, company }) => (
-              <tr key={amount}>
+              <tr key={amount + company.name}>
                 <td>{company.name}</td>
                 <td>
                   <NumberFormat

@@ -32,7 +32,7 @@ const Table = props => {
             );
           } else {
             return (
-              <div className="table-entry">
+              <div key={name} className="table-entry">
                 <div className="entry-l">
                   <p>{name}</p>
                 </div>

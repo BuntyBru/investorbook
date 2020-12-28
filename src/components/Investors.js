@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-//import SideDesc from './sideDesc';
 import { useQuery, gql } from "@apollo/client";
 import Table from "./Table";
+//import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Example of a component that uses apollo-client to fetch data.
 
@@ -32,7 +34,9 @@ query GetInvestors {
           </div>
         </div>
 
-        <div className="search">Search</div>
+        <div className="search">
+          <FontAwesomeIcon icon={faSearch} />
+        </div>
       </div>
       <Table data={data.investor} type="Investor" />
       <div className="bottom-pager">

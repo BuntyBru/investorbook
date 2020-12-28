@@ -13,8 +13,7 @@
   margin-top: 0;
   background-color: white;
   padding: 0 20px;
-  max-width: 1440px;
-  margin: 0 auto;
+
 
 }
 
@@ -31,6 +30,10 @@
   font-weight: 700;
   line-height: 18px;
   letter-spacing: .18em;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .rest-body {
@@ -309,10 +312,16 @@
 }
 
 
-.db-part-two p:nth-child(2) {
+.db-part-two button {
 
   color: #333FAD;
   cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 0;
+  background: white;
+  border: 0;
+  outline: none;
 }
 
 .table-container {
@@ -376,6 +385,136 @@ table tbody tr td:nth-child(2) {
   font-size: 12px;
 }
 
+/*Css for modal*/
+#modal {
+  background-color: rgba(0, 0, 0, 0.34);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal:empty {
+  display: none;
+}
+
+#modal>div {
+  background-color: white;
+  max-width: 500px;
+  min-width: 30%;
+  padding: 15px;
+  border-radius: 5px;
+
+  animation: fade-slide-in 0.1s ease-out forwards;
+}
+
+@keyframes fade-slide-in {
+  from {
+    transform: translateY(-5rem);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+#modal h4,
+#modal p {
+  font-weight: 500;
+  font-size: 18px;
+  color: #000000;
+  text-align: start;
+  margin-bottom: 11px;
+}
+
+#modal p {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 21px;
+}
+
+#modal .buttons button {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+#modal .select-tag,
+#modal input {
+  background: none;
+  width: 100%;
+  border-width: 0px 0px 1px;
+  border-top-style: initial;
+  border-right-style: initial;
+  border-bottom-style: solid;
+  border-left-style: initial;
+  border-top-color: initial;
+  border-right-color: initial;
+  border-bottom-color: rgb(0, 0, 0);
+  border-left-color: initial;
+  border-image: initial;
+  font-size: 15px;
+  padding: 10px 3px;
+  color: #495057;
+  outline: none;
+  margin-bottom: 18px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.select-tag {
+  margin-bottom: 32px;
+}
+
+.button-holder {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-holder button {
+  outline: none;
+}
+
+.button-holder button:nth-child(1) {
+  padding: 0px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 12px;
+  color: #434FBC;
+  background: white;
+  border: none;
+  margin-right: 14px;
+  font-style: normal;
+  cursor: pointer;
+
+}
+
+.button-holder button:nth-child(2) {
+
+  background: #434FBC;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  padding: 9px 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
