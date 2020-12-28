@@ -32,20 +32,14 @@ const Table = props => {
             );
           } else {
             return (
-              <Link
-                to={`/company-details/${id}`}
-                key={id}
-                className="link-tags"
-              >
-                <div className="table-entry">
-                  <div className="entry-l">
-                    <p>{name}</p>
-                  </div>
-                  <div className="entry-r">
-                    <SideDesc id={id} />
-                  </div>
+              <div className="table-entry">
+                <div className="entry-l">
+                  <p>{name}</p>
                 </div>
-              </Link>
+                <div className="entry-r">
+                  <SideDesc id={id} />
+                </div>
+              </div>
             );
           }
         })}

@@ -14,7 +14,6 @@ function App() {
         <Router>
           <FirstPage path="/" />
           <DetailsPage path="/investor-details/:id" />
-          <DetailsPage path="/company-details/:id" />
         </Router>
       </div>
     </div>
