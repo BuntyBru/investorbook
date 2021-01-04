@@ -1,0 +1,18 @@
+.SearchBar {
+    position: relative;
+    display: flex;
+}
+
+input {
+    padding-left: 10px;
+    padding-right: 28px;
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+}
+
+.sicon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
